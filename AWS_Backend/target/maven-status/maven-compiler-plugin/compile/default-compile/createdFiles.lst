@@ -1,0 +1,5 @@
+Model/Invoice.class
+Model/Invoice$Item.class
+Service/PdfGenerationService.class
+config/BackendApplication.class
+Controller/Controller.class

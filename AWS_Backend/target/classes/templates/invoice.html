@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <style>
+	        table {
+	            width: 100%;
+	            border-collapse: collapse;
+	        }
+	        
+	        th, td {
+	            border: 1px solid black;
+	            padding: 28px; 
+	            text-align: left; 
+	        }
+
+	        thead th {
+				border-top: none !important;
+				font-weight: normal;
+				text-align: center;
+	        }
+			table.center {
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+	    </style>
+</head>
+<body>
+    <table style="width: 50%" class="center">
+        <tr>
+            <td>
+                <b>Seller:<b><br> <b><span th:text="${seller}"></span><b><br/>
+                <b><span th:text="${sellerAddress}"></span></b>
+                <b>GSTIN: <span th:text="${sellerGstin}"></span></b><br/>
+            </td>
+            <td>
+                <b>Buyer:<br> <span th:text="${buyer}"></span></b><br/>
+                <b><span th:text="${buyerAddress}"></span></b>
+                <b>GSTIN: <span th:text="${buyerGstin}"></span></b><br/>
+            </td>
+        </tr>
+    </table>
+    <table style="width: 50%" class="center">
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Rate</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="item : ${items}">
+                <td th:text="${item.name}"></td>
+                <td th:text="${item.quantity}"></td>
+                <td th:text="${item.rate}"></td>
+                <td th:text="${item.amount}"></td>
+            </tr>
+            <tr>
+            </tr>
+            
+        </tbody>
+    </table>
+</body>
+</html>
